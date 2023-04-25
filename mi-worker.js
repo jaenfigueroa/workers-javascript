@@ -10,11 +10,15 @@ const startWork = () => {
     console.log(index)
   }
 
-  postMessage('termine') //asi podemos enviar un mensaje cuando se termine el trabajo
+  self.postMessage('termine') //asi podemos enviar un mensaje cuando se termine el trabajo
 }
 
 
-onerror = (e) => { // ASI PODEMOS MANEJAR, EN CASO QUE OCURRA UN ERROR AQUI
+self.onerror = (e) => { // ASI PODEMOS MANEJAR, EN CASO QUE OCURRA UN ERROR AQUI
   console.error('Se ha producido un error en el worker:', e)
   //AQUI DENTRO
 }
+
+/*
+- POR BUENAS PRACTICAS SIEMPRE USAR SELF.METODO
+*/
