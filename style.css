@@ -1,0 +1,15 @@
+div{
+  display: flex;
+  flex-direction: column;
+}
+button{
+  padding: 1rem;
+}
+button:hover{
+  animation: parpadear 300ms infinite alternate-reverse;
+}
+
+@keyframes parpadear {
+  0%{scale: 0.8;}
+  100%{scale: 1;}
+}
