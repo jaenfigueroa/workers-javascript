@@ -1,6 +1,13 @@
+importScripts('./utilidad.js') // OJO QUE TENER CUIDADO CON LOS NOMBRES,
+                              // PUEDEN HACER CONFLICTOS, SI AQUI TENEMOS
+                              // VARIABLES CON LOS MISMOS NOMBRES QUE ALLA.
+
 //AQUI INDICAMOS LO QUE SE DEBE DE HACER, CUANDO SE ENVIE ENVIE UN MENSAJE.
 self.onmessage = (e) => {
   console.log(e.data) // por el "e" podemos recibir valores para usar aqui.
+
+  mostrarSaludo() //OJO, QUE ESTA PROCESO DE UTILIDADES ES SINCRONO,
+                  //EL WORKER SE PASUSARA HASTA QUE SE COMPLETE ESTA EJECUCION.
 
   startWork() //aqui empezamos a ejecutar el trabajo costoso.
 }
